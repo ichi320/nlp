@@ -26,6 +26,7 @@ func Add(a mat.Matrix, b mat.Matrix) mat.Matrix {
 	return B
 }
 
+// Sigmoid is in: Matrix out:Matrix
 func Sigmoid(x mat.Matrix) mat.Matrix {
 	sigmoid := func(i, j int, v float64) float64 {
 		return 1 / (1 + math.Exp(-v))
@@ -74,7 +75,7 @@ func main() {
 	C2 = Add(B, B)
 	matPrint(C2)
 
-	// // scale
+	// // scale 定数倍
 	// C = mat.NewDense(3, 4, nil)
 	// C.Scale(5, B)
 	// matPrint(C)
